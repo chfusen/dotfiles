@@ -1,0 +1,68 @@
+# Start message
+startup_message off
+
+# Set hardstatus always on
+hardstatus alwayslastline " %-Lw%{= Yb}(%n%F %t)%{-}%+Lw %=| %{B}%d/%m %0c:%s "
+
+# Set default encoding using utf8
+defutf8 on
+
+# Refresh the display when exiting programs
+altscreen on
+
+# Dynamic title
+shelltitle '$ |bash'
+defhstatus "screen ^E (^Et) | $USER@^EH"
+defscrollback 50000
+
+# Disable vbell
+vbell off
+
+#### Keboard binding
+
+## bind Alt" select 0~9
+bindkey "^[0" select 0
+bindkey "^[1" select 1
+bindkey "^[2" select 2
+bindkey "^[3" select 3
+bindkey "^[4" select 4
+bindkey "^[5" select 5
+bindkey "^[6" select 6
+bindkey "^[7" select 7
+bindkey "^[8" select 8
+bindkey "^[9" select 9
+
+# bind Alt+d to detach screen session (to background)
+bindkey "^[d" detach
+
+# bind Alt+c to create a new screen
+bindkey "^[c" screen
+
+# bind Alt+r to rename current screen window
+bindkey "^[r" title
+
+# bind Alt+x to splite current screen window
+bindkey "^[x" eval 'split' 'focus' 'screen'
+
+# bind Alt+z to remove current splite screen window
+bindkey "^q"  eval 'kill' 'remove'
+bindkey "^[k" kill
+
+# bind Alt+z to remove current splite screen window
+bindkey "^[o"  only
+
+# bind Alt+q to move to previous or next window
+## ALT
+bindkey "^[q" prev               # Alt + q
+bindkey "^[w" next              # Alt + w
+bindkey "^[[1;3D" prev        # Alt + Right Arrow
+bindkey "^[[1;3C" next        # Alt +  Left Arrow
+bindkey "^[[1;3A" prev      # Alt +  Up Arrow
+bindkey "^[[1;3B" next      # Alt +  Down Arrow
+
+# If you like to use Shift + Arrows can do this :
+##SHIFT
+#bindkey "^[[1;2D" prev        # Shift + Right Arrow
+#bindkey "^[[1;2C" next        # Shift +  Left Arrow
+#bindkey "^[[1;2A" prev      # Shift +  Up Arrow
+#bindkey "^[[1;2B" next      # Shift +  Down Arrow
